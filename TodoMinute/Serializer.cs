@@ -1,0 +1,57 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace TodoMinute
+{
+    public static class Serializer
+    {
+        public static void Serialize<Object>(Object dictionary, Stream stream)
+        {
+            try // try to serialize the collection to a file
+            {
+                using (stream)
+                {
+                    // create BinaryFormatter
+                    BinaryFormatter bin = new BinaryFormatter();
+                    // serialize the collection (EmployeeList1) to file (stream)
+                    bin.Serialize(stream, dictionary);
+                }
+            }
+            catch (IOException ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static Object Deserialize<Object>(Stream stream) where Object : new()
+        {
+            Object ret = CreateInstance<Object>();
+            try
+            {
+                using (stream)
+                {
+                    // create BinaryFormatter
+                    BinaryFormatter bin = new BinaryFormatter();
+                    // deserialize the collection (Employee) from file (stream)
+                    ret = (Object)bin.Deserialize(stream);
+                }
+            }
+            catch (IOException ex)
+            {
+                throw ex;
+            }
+            return ret;
+        }
+
+        // function to create instance of T
+        public static Object CreateInstance<Object>() where Object : new()
+        {
+            return (Object)Activator.CreateInstance(typeof(Object));
+        }
+    }
+}

@@ -59,12 +59,6 @@ namespace TodoMinute
             }
         }
 
-        private string DayOfWeekToString(DayOfWeek day)
-        {
-            var culture = new System.Globalization.CultureInfo("fr-FR");
-            return culture.DateTimeFormat.GetDayName(day);
-        }
-
         private void RefreshCharts()
         {
             doneTasksChart.Series[0].Points.Clear();
@@ -79,7 +73,7 @@ namespace TodoMinute
             for (int i = 0; i < 14; i++)
             {
                 var day = DateTime.Today.AddDays(i);
-                futureTasksChart.Series[0].Points.AddXY(DayOfWeekToString(day.DayOfWeek), GetTaskInfo(day, false));
+                futureTasksChart.Series[0].Points.AddXY(Utils.DayOfWeekToString(day.DayOfWeek), GetTaskInfo(day, false));
             }      
         }
         #endregion

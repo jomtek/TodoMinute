@@ -135,8 +135,9 @@ namespace TodoMinute.Theme
                 LineAlignment = StringAlignment.Center
             })
             {
-                var font = new Font("Segoe UI", 16f);
-                e.Graphics.DrawString(DayToString(), font, new SolidBrush(Color.Gray), dayRegion, sf);
+                var font = new Font("Segoe UI", 14f);
+                string accurateDOW = Utils.DayOfWeekToString(DateTime.Today.AddDays(_daysFromToday).DayOfWeek);
+                e.Graphics.DrawString($"{DayToString()} ({accurateDOW})", font, new SolidBrush(Color.Gray), dayRegion, sf);
             }
 
             // left-right regions

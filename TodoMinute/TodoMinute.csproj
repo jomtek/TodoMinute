@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>folder_work_2.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -84,6 +87,7 @@
     <Compile Include="Theme\TodoTask.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Utils.cs" />
     <EmbeddedResource Include="Task\CreateTaskForm.resx">
       <DependentUpon>CreateTaskForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -152,6 +156,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\plus_icon_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="folder_work_2.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

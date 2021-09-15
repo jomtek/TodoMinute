@@ -20,6 +20,8 @@ namespace TodoMinute.Theme
         private Rectangle _lBtnRegion;
         private Rectangle _rBtnRegion;
 
+        private ToolTip _toolTip;
+
         [Category("Todo")]
         public event OnDayChangedEventHandler OnDayChanged;
         public delegate void OnDayChangedEventHandler(object sender);
@@ -40,6 +42,10 @@ namespace TodoMinute.Theme
 
             SetStyle(ControlStyles.SupportsTransparentBackColor, true);
             BackColor = Color.Transparent;
+
+            _toolTip = new ToolTip();
+            string date = DateTime.Now.AddDays(_daysFromToday).ToString("M");
+            _toolTip.SetToolTip(this, $"pour le {date}");
         }
 
         #region Events
@@ -83,6 +89,9 @@ namespace TodoMinute.Theme
                 OnDayChanged?.Invoke(this);
                 Refresh();
             }
+
+            string date = DateTime.Now.AddDays(_daysFromToday).ToString("M");
+            _toolTip.SetToolTip(this, $"pour le {date}");
         }
         #endregion
 

@@ -62,7 +62,7 @@ namespace TodoMinute
             this.mainTC.Location = new System.Drawing.Point(0, 0);
             this.mainTC.Name = "mainTC";
             this.mainTC.SelectedIndex = 0;
-            this.mainTC.Size = new System.Drawing.Size(538, 593);
+            this.mainTC.Size = new System.Drawing.Size(718, 593);
             this.mainTC.TabIndex = 1;
             this.mainTC.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.mainTC_Selecting);
             // 
@@ -73,7 +73,7 @@ namespace TodoMinute
             this.homeTP.Location = new System.Drawing.Point(4, 37);
             this.homeTP.Name = "homeTP";
             this.homeTP.Padding = new System.Windows.Forms.Padding(3);
-            this.homeTP.Size = new System.Drawing.Size(530, 552);
+            this.homeTP.Size = new System.Drawing.Size(710, 552);
             this.homeTP.TabIndex = 0;
             this.homeTP.Text = "Accueil";
             this.homeTP.UseVisualStyleBackColor = true;
@@ -177,7 +177,7 @@ namespace TodoMinute
             this.planningTP.Location = new System.Drawing.Point(4, 37);
             this.planningTP.Name = "planningTP";
             this.planningTP.Padding = new System.Windows.Forms.Padding(3);
-            this.planningTP.Size = new System.Drawing.Size(530, 552);
+            this.planningTP.Size = new System.Drawing.Size(710, 552);
             this.planningTP.TabIndex = 1;
             this.planningTP.Text = "Planning";
             this.planningTP.UseVisualStyleBackColor = true;
@@ -216,7 +216,7 @@ namespace TodoMinute
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(538, 593);
+            this.ClientSize = new System.Drawing.Size(718, 593);
             this.Controls.Add(this.mainTC);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
